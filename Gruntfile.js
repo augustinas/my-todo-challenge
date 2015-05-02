@@ -19,8 +19,8 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('jshint', ['jshint']);
+  grunt.registerTask('watch', ['watch']);
   grunt.registerTask('test', ['jshint', 'karma']);
-  grunt.registerTask('default');
+  grunt.registerTask('default', ['jshint']);
 
 };
