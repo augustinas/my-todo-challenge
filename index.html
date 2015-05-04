@@ -5,12 +5,23 @@
 </head>
 
 <body>
-  <div ng-controller="TodoListController">
+  <div ng-controller="TodoListController as todoCtrl">
+    <ul>
+      <li ng-repeat="task in todoCtrl.todoList">
+        <span>{{ task }} </span>
+      </li>
+    </ul>
+
+
+    <form>
+      <input type="text" ng-model="todoCtrl.newTask">
+      <button class="btn" ng-click="todoCtrl.addTask()">Add Task</button>
+    </form>
 
   </div>
-  <p>Testing, testing, attention please.</p>
 
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
   <script type="text/javascript" src="public/scripts/app.js"></script>
   <script type="text/javascript" src="public/scripts/todoListController.js"></script>
 </body>
