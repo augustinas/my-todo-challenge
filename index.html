@@ -2,22 +2,45 @@
 <html ng-app="MyTodoApp">
 <head>
   <title>First TO-DO MVP</title>
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 </head>
 
 <body>
-  <div ng-controller="TodoListController as todoCtrl">
-    <ul>
-      <li ng-repeat="task in todoCtrl.todoList">
-        <span>{{ task }} </span>
-      </li>
-    </ul>
+  <div class="container" ng-controller="TodoListController as todoCtrl">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="todolist not-done">
+          <h1>To-Do (or Not-To-Do) List</h1>
 
+          <input type="text" class="form-control add-todo" placeholder="Add todo" ng-model="todoCtrl.newTask">
+                    <!-- <button id="checkAll" class="btn btn-success">Mark all as done</button> -->
+          <button class="btn" ng-click="todoCtrl.addTask(todoCtrl.newTask)">Add Task</button>
+          <hr>
+          <ul id="sortable" class="list-unstyled">
+            <li class="ui-state-default" ng-repeat="task in todoCtrl.todoList">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">{{ task }}</label>
+              </div>
+            </li>
+          </ul>
 
-    <form>
-      <input type="text" ng-model="todoCtrl.newTask">
-      <button class="btn" ng-click="todoCtrl.addTask()">Add Task</button>
-    </form>
+          <div class="todo-footer">
+            <strong><span class="count-todos"></span></strong> There is a total of {{ todoCtrl.todoList.length }} tasks to do.
+          </div>
+        </div>
+      </div>
 
+      <!-- <div class="col-md-6">
+        <div class="todolist">
+          <h1>Already Done</h1>
+          <ul id="done-items" class="list-unstyled">
+            <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+
+          </ul>
+        </div>
+      </div> -->
+    </div>
   </div>
 
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>

@@ -4,7 +4,7 @@ angular
 
     this.todoList = [];
 
-    this.addTask = function() {
-      this.todoList.push(this.newTask);
+    this.addTask = function(neTask) {
+      this.todoList.push(neTask);
     };
   });
