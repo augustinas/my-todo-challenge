@@ -14,7 +14,7 @@
           <h1>To-Do (or Not-To-Do) List</h1>
 
           <input type="text" class="form-control add-todo" placeholder="Add todo" ng-model="todoCtrl.newTask">
-                    <!-- <button id="checkAll" class="btn btn-success">Mark all as done</button> -->
+          <!-- <button id="checkAll" class="btn btn-success">Mark all as done</button> -->
           <button class="btn" ng-click="todoCtrl.addTask(todoCtrl.newTask)">Add Task</button>
           <hr>
           <ul id="sortable" class="list-unstyled">
@@ -31,15 +31,15 @@
         </div>
       </div>
 
-      <!-- <div class="col-md-6">
+      <div class="col-md-6">
         <div class="todolist">
-          <h1>Already Done</h1>
+          <h1>Proudly Done</h1>
           <ul id="done-items" class="list-unstyled">
             <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
 
           </ul>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 
@@ -47,6 +47,7 @@
   <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
   <script type="text/javascript" src="public/scripts/app.js"></script>
   <script type="text/javascript" src="public/scripts/todoListController.js"></script>
+  <script type="text/javascript" src="public/scripts/todoService.js"></script>
 </body>
 
 </html>

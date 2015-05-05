@@ -9,13 +9,12 @@ describe('TodoListController', function() {
   }));
 
   it('initialises with an empty list', function() {
-    expect(ctrl.todoList).toEqual([]);
+    expect(ctrl.todoList).toEqual(['Demo Task']);
   });
 
   it('adds a new todo item to the list', function() {
-    ctrl.newTask = 'Clean out my drawers';
-    ctrl.addTask();
-    expect(ctrl.todoList).toEqual(['Clean out my drawers']);
+    ctrl.addTask('Clean out my drawers');
+    expect(ctrl.todoList).toEqual(['Demo Task', 'Clean out my drawers']);
   });
 
 });
