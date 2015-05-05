@@ -18,7 +18,7 @@
           <button class="btn" ng-click="todoCtrl.addTask(todoCtrl.newTask)">Add Task</button>
           <hr>
           <ul id="sortable" class="list-unstyled">
-            <li class="ui-state-default" ng-repeat="task in todoCtrl.todoList">
+            <li class="ui-state-default" ng-repeat="task in todoCtrl.todoList" ng-click="todoCtrl.completeTask(task, $index)">
               <div class="checkbox">
                 <label><input type="checkbox" value="">{{ task }}</label>
               </div>
@@ -35,7 +35,7 @@
         <div class="todolist">
           <h1>Proudly Done</h1>
           <ul id="done-items" class="list-unstyled">
-            <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+            <li ng-repeat="task in todoCtrl.completedList">{{ task }}<button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
 
           </ul>
         </div>
