@@ -8,7 +8,7 @@ describe('TodoListController', function() {
     ctrl = $controller('TodoListController');
   }));
 
-  it('initialises with an empty list', function() {
+  it('initialises with a demo task', function() {
     expect(ctrl.todoList).toEqual(['Demo Task']);
   });
 
