@@ -4,6 +4,7 @@
   <title>First TO-DO MVP</title>
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="public/stylesheets/main.css" />
 </head>
 
 <body>
@@ -14,19 +15,15 @@
           <h1>To-Do (or Not-To-Do) List</h1>
 
           <input type="text" class="form-control add-todo" placeholder="Add todo" ng-model="todoCtrl.newTask">
-          <!-- <button id="checkAll" class="btn btn-success">Mark all as done</button> -->
           <button class="btn" ng-click="todoCtrl.addTask(todoCtrl.newTask)">Add Task</button>
-          <hr>
           <ul id="sortable" class="list-unstyled">
             <li class="ui-state-default" ng-repeat="task in todoCtrl.todoList" ng-click="todoCtrl.completeTask(task, $index)">
-              <div class="checkbox">
-                <label><input type="checkbox" value="">{{ task }}</label>
-              </div>
+              {{ task }}
             </li>
           </ul>
 
           <div class="todo-footer">
-            <strong><span class="count-todos"></span></strong> There is a total of {{ todoCtrl.todoList.length }} tasks to do.
+            There is a total of {{ todoCtrl.todoList.length }} tasks to do.
           </div>
         </div>
       </div>
@@ -34,9 +31,12 @@
       <div class="col-md-6">
         <div class="todolist">
           <h1>Proudly Done</h1>
-          <ul id="done-items" class="list-unstyled">
-            <li ng-repeat="task in todoCtrl.completedList">{{ task }}<button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
-
+          <ul class="list-unstyled done-items">
+            <li ng-repeat="task in todoCtrl.completedList">{{ task }}
+              <button class="remove-item btn btn-default btn-xs pull-right">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>

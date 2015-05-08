@@ -14,14 +14,20 @@ body{
 .form-control{
     border-radius:0;
 }
-li.ui-state-default{
+.ui-state-default{
     background:#fff;
     border:none;
     border-bottom:1px solid #ddd;
 }
 
-li.ui-state-default:last-child{
+.ui-state-default:last-child{
     border-bottom:none;
+}
+
+.list-unstyled {
+    border-top: solid 1px #999999;
+    padding-top: 1em;
+    margin-top: 1em;
 }
 
 .todo-footer{
@@ -32,11 +38,7 @@ li.ui-state-default:last-child{
 #done-items li{
     padding:10px 0;
     border-bottom:1px solid #ddd;
-    text-decoration:line-through;
 }
 #done-items li:last-child{
     border-bottom:none;
-}
-#checkAll{
-    margin-top:10px;
 }
